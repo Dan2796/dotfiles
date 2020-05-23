@@ -115,3 +115,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# Added by Dan
+# -----------------------------------------------------------------------------
+source ~/.bashAliases 

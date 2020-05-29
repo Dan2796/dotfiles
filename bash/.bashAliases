@@ -12,3 +12,4 @@ alias Bibify=Bibify.sh
 alias findref=findref.sh
 alias protego=protego.sh
 alias renameCiteKey=renameCiteKey.sh
+alias manualref=manualref.sh

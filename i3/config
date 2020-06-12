@@ -4,6 +4,28 @@
 # If you change keyboard layout then delete and re-run i3-config-wizard(1).
 set $term --no-startup-id gnome-terminal
 
+# Personal Shortcut Mappings
+# --------------------------------------------------------------------------{{{
+
+# Mod tab workspace switch
+bindsym $mod+Tab workspace back_and_forth
+
+# Open applications 
+bindsym $mod+g exec /usr/bin/google-chrome
+bindsym $mod+m exec i3-sensible-terminal -e neomutt
+bindsym $mod+o exec i3-sensible-terminal -e ranger 
+
+bindsym $mod+z exec xdg-open ~/TheBible.pdf
+
+# Run email sync
+bindsym $mod+shift+M exec i3-sensible-terminal -e mbsync outlook oxford personalmail
+
+# Run scripts 
+bindsym $mod+n exec ~/bin/knowledgeSearch.sh
+bindsym $mod+Shift+T exec "screenChange.sh"
+
+# --------------------------------------------------------------------------}}}
+
 # i3 Gaps 
 # --------------------------------------------------------------------------{{{
 for_window [class=".*"] border pixel 0 # gets rid of titlebar
@@ -12,10 +34,6 @@ gaps inner 20
 gaps outer 20
 
 # --------------------------------------------------------------------------}}}
-
-# Scripts
-bindsym $mod+n exec ~/bin/knowledgeSearch.sh
-bindsym $mod+z exec xdg-open ~/TheBible.pdf
 
 # Basics
 # --------------------------------------------------------------------------{{{
@@ -133,34 +151,6 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 # --------------------------------------------------------------------------}}}
 
-# Useful Shortcut Mappings
-# --------------------------------------------------------------------------{{{
-
-# Mod tab workspace switch
-bindsym $mod+Tab workspace back_and_forth
-
-# Screen dmenu choice
-bindsym $mod+Shift+T exec "screenChange.sh"
-
-# Google and mutt
-bindsym $mod+g exec /usr/bin/google-chrome
-bindsym $mod+m exec $i3-sensible-terminal -e neomutt # Not working, don't know why...
-
-# --------------------------------------------------------------------------}}}
-
-# Audio and Brightness Mappings
-# --------------------------------------------------------------------------{{{
-
-# Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
-
-# Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 && xbacklight > ~/.config/brightness && $refresh_i3status
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 && xbacklight > ~/.config/brightness
-
-# --------------------------------------------------------------------------}}}
 
 # Restart and Reload Things
 # --------------------------------------------------------------------------{{{
@@ -217,7 +207,20 @@ bar {
 # Wallpaper Assign (using feh)
 # --------------------------------------------------------------------------{{{
 
-exec --no-startup-id feh --bg-scale ~/Pictures/scifiplanets.jpg
+exec --no-startup-id feh --bg-scale ~/Pictures/astronaut.jpg
 
 # --------------------------------------------------------------------------}}}
 
+# Audio and Brightness Mappings
+# --------------------------------------------------------------------------{{{
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 && xbacklight > ~/.config/brightness && $refresh_i3status
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 && xbacklight > ~/.config/brightness
+
+# --------------------------------------------------------------------------}}}

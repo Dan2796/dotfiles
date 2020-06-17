@@ -3,6 +3,7 @@ filetype on
 
 " Remap
 inoremap jk <Esc>
+nmap <Space>c  : w <enter> : !pdflatex % <enter>
 
 " Relative line jump global for counts
 nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')

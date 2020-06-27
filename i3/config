@@ -29,7 +29,7 @@ bindsym $mod+Shift+T exec "screenChange.sh"
 # i3 Gaps 
 # --------------------------------------------------------------------------{{{
 for_window [class=".*"] border pixel 0 # gets rid of titlebar
-# smart_gaps on
+smart_gaps on
 gaps inner 20
 gaps outer 20
 

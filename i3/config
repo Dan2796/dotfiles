@@ -39,7 +39,7 @@ gaps outer 20
 # --------------------------------------------------------------------------{{{
 
 # Set mod key
-set $mod Mod4
+set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -126,7 +126,7 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+0 workspace 0
+bindsym $mod+0 workspace 0:Base
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
 bindsym $mod+3 workspace 3
@@ -138,7 +138,7 @@ bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 
 # move focused container to workspace
-bindsym $mod+Shift+0 move container to workspace 0
+bindsym $mod+Shift+0 move container to workspace 0:Base
 bindsym $mod+Shift+1 move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2
 bindsym $mod+Shift+3 move container to workspace 3
@@ -198,7 +198,8 @@ bindsym $mod+r mode "resize"
 # --------------------------------------------------------------------------{{{
 
 bar {
-        status_command i3status
+  status_command i3status
+  strip_workspace_numbers yes
 }
 
 # --------------------------------------------------------------------------}}}

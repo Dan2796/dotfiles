@@ -207,7 +207,7 @@ bar {
 # Wallpaper Assign (using feh)
 # --------------------------------------------------------------------------{{{
 
-exec --no-startup-id feh --bg-scale ~/Pictures/spaceshipsunset.jpg
+exec --no-startup-id feh --bg-scale ~/Pictures/astronaut.jpg
 
 # --------------------------------------------------------------------------}}}
 
@@ -220,7 +220,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
-#bindsym XF86MonBrightnessUp exec xbacklight -inc 20 && xbacklight > ~/.config/brightness && $refresh_i3status
-#bindsym XF86MonBrightnessDown exec xbacklight -dec 20 && xbacklight > ~/.config/brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 && xbacklight > ~/.config/brightness && $refresh_i3status
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 && xbacklight > ~/.config/brightness
 
 # --------------------------------------------------------------------------}}}

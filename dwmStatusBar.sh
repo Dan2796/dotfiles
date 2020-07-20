@@ -1,11 +1,18 @@
 #!/bin/sh
 
-SOUND=$(pactl list sinks | grep 'Volume: f' | grep -o '[0-9]\+%' | head -1)
+while true; do 
+    
+    WIFI=$(nmcli | grep -o 'connected to.\+')
 
-BATPERC=$(upower -i $(upower -e | grep 'BAT') | grep -E "percentage" | xargs echo)
+    SOUND=$(pactl list sinks | grep 'Volume: f' | grep -o '[0-9]\+%' | head -1)
 
-BATSTATE=$(upower -i $(upower -e | grep 'BAT') | grep -E "state|to\ full" | xargs echo)
+    BATPERC=$(upower -i $(upower -e | grep 'BAT') | grep -E "percentage" | xargs echo)
 
-DATE=$(date +"%a, %d %b, %H:%M")
+    BATSTATE=$(upower -i $(upower -e | grep 'BAT') | grep -E "state|to\ full" | xargs echo)
 
-xsetroot -name "sound: $SOUND | $BATPERC $BATSTATE | $DATE"
+    DATE=$(date +"%a, %d %b, %H:%M")
+
+    xsetroot -name "$WIFI | sound: $SOUND | $BATPERC $BATSTATE | $DATE"
+    
+    sleep 1m
+done

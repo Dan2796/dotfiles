@@ -1,5 +1,7 @@
 #!/bin/sh
 
+pkill .config/dwmStatus
+
 while true; do 
     
     WIFI=$(nmcli | grep -o 'connected to.\+' |
@@ -23,7 +25,7 @@ while true; do
 
     DATE=$(date +"%a, %d %b, %H:%M")
 
-    xsetroot -name "$WIFI | Sound: $MUTE $SOUND | $BATPERC $BATSTATE | $DATE"
+    xsetroot -name "$WIFI | Sound: ($MUTE) $SOUND | $BATPERC $BATSTATE | $DATE"
     
     sleep 1m
 

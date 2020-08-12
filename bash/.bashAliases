@@ -1,6 +1,8 @@
 # Aliases for bash
 
-alias vi=nvim
+# Principle of least surprises
+alias vim=nvim
+alias mutt=neomutt
 
 # Bib scripts
 alias accio=accio.sh

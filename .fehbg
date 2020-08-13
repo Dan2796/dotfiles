@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-scale '/home/dan/Wallpapers/astronaut.jpg' 
+feh --no-fehbg --bg-fill '/home/dan/Wallpapers/RandomCycleSciFi/JR1.png' 

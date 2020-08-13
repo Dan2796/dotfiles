@@ -1,0 +1,10 @@
+# My X Profile 
+
+# Set wallpaper
+# ~/.fehbg &
+~/.config/dwmStatusBar.sh &
+~/.config/WallpaperRandomiser.sh &
+
+picom &
+xfce4-power-manager &
+xset b off &

@@ -6,7 +6,11 @@ pkill .config/WallpaperRandomiser.sh
 
 while true; do
 
-   ls -d ~/Wallpapers/RandomCycleSciFi/* | shuf -n 1 | xargs feh --bg-fill
+   ls -d ~/Wallpapers/OtherWorlds/* \
+         ~/Wallpapers/Scythe/* \
+         ~/Wallpapers/SciFi/* \
+         ~/Wallpapers/CyberPunkCity/* \
+   | shuf -n 1 | xargs feh --bg-fill
 
    sleep 5m
 

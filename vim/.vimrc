@@ -20,8 +20,7 @@ set nocindent
 set nosmartindent
 set noautoindent
 
-filetype indent off
-filetype plugin indent off
+filetype plugin on
 
 " Tabbing set to 2 spaces
 set shiftwidth=2
@@ -78,9 +77,9 @@ Plug 'morhetz/gruvbox' " Gruv-box theme
 
 Plug 'lervag/vimtex' " For tex stuff e.g. autocite hopefully
 
-call plug#end()
+Plug 'chrisbra/csv.vim' " For CSV viewing
 
-filetype plugin indent on 
+call plug#end()
 
 let g:pandoc#modules#disabled = ["keyboard"] " disabling j map from vim-pandoc
 

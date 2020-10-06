@@ -8,3 +8,5 @@
 picom &
 xfce4-power-manager &
 xset b off &
+
+EDITOR=nvim

@@ -70,13 +70,10 @@ Plug 'junegunn/goyo.vim' " Goyo
 Plug 'jalvesaq/Nvim-R' " Nvim R
 Plug 'jalvesaq/vimcmdline' " Nvim-R for Python
 Plug 'vim-pandoc/vim-pandoc-syntax' " Markdown syntax
-Plug 'vim-pandoc/vim-rmarkdown' " Markdown stuff
-Plug 'jalvesaq/vim-rmarkdown' " RMarkdown buffer thing
-
+Plug 'vim-pandoc/vim-rmarkdown' " Other markdown stuff
 Plug 'morhetz/gruvbox' " Gruv-box theme
-
 Plug 'lervag/vimtex' " For tex stuff e.g. autocite hopefully
-
+Plug 'maverickg/stan.vim' " For Stan syntax highlighting
 Plug 'chrisbra/csv.vim' " For CSV viewing
 
 call plug#end()
@@ -102,4 +99,6 @@ autocmd Filetype tex,latex set spell
 let g:indentLine_setConceal = 0
 autocmd Filetype markdown set spell  
 
+" Flavour for tex plugin
+let g:tex_flavor = 'latex'
 

@@ -99,6 +99,9 @@ autocmd Filetype tex,latex set spell
 let g:indentLine_setConceal = 0
 autocmd Filetype markdown set spell  
 
+" Turn of the underscore change in R
+let R_assign = 0
+
 " Flavour for tex plugin
 let g:tex_flavor = 'latex'
 

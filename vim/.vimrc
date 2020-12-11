@@ -52,6 +52,9 @@ set foldmethod=marker
 " Map localleader to comma
 let maplocalleader = ','
 
+" Shortcut for running python
+nnoremap <F5> <Esc>:w<CR>:!python %<CR>
+
 " Advanced
 set ruler " Show info. at bottom
 

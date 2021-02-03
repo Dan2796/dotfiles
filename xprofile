@@ -10,3 +10,5 @@ xfce4-power-manager &
 xset b off &
 
 EDITOR=nvim
+BROWSER=/usr/bin/firefox
+

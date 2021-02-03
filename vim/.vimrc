@@ -47,7 +47,9 @@ set nu rnu
 set viminfo='100,f1
 
 " Fold method
-set foldmethod=marker
+autocmd Filetype r set foldmethod=marker  
+"set foldmethod=marker
+set foldmethod=syntax
 
 " Map localleader to comma
 let maplocalleader = ','
@@ -62,6 +64,7 @@ set undolevels=1000
 
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree' " NERDTree
+Plug 'spolu/dwm.vi' " For dwm windows in vim!
 
 Plug 'Yggdroot/indentLine' " For indentation lines
 
@@ -69,6 +72,8 @@ Plug 'tpope/vim-surround' " For tagging
 Plug 'tpope/vim-fugitive' " Git inside vim
 
 Plug 'junegunn/goyo.vim' " Goyo
+
+Plug 'vim-airline/vim-airline' " Vim airline for pretty bar thing
 
 Plug 'jalvesaq/Nvim-R' " Nvim R
 Plug 'jalvesaq/vimcmdline' " Nvim-R for Python
@@ -78,6 +83,7 @@ Plug 'morhetz/gruvbox' " Gruv-box theme
 Plug 'lervag/vimtex' " For tex stuff e.g. autocite hopefully
 Plug 'maverickg/stan.vim' " For Stan syntax highlighting
 Plug 'chrisbra/csv.vim' " For CSV viewing
+Plug 'vim-latex/vim-latex' " For full vimtex
 
 call plug#end()
 
@@ -107,4 +113,14 @@ let R_assign = 0
 
 " Flavour for tex plugin
 let g:tex_flavor = 'latex'
+   
+" Run R in tmux
+let R_external_term = 1
 
+" Buffer Settings:
+" Airline buffer show
+let g:airline#extensions#tabline#enabled = 1
+" Allow hidden buffers
+set hidden
+" Tab for buffer wildcards
+set wildchar=<Tab> wildmenu wildmode=full

@@ -1,5 +1,8 @@
 # Aliases for bash
 
+# Auto zoom feh
+alias feh='feh --scale-down'
+
 # Principle of least surprises
 alias vim=nvim
 alias mutt=neomutt

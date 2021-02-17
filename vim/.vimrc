@@ -64,7 +64,7 @@ set undolevels=1000
 
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree' " NERDTree
-Plug 'spolu/dwm.vi' " For dwm windows in vim!
+"Plug 'spolu/dwm.vi' " For dwm windows in vim!
 
 Plug 'Yggdroot/indentLine' " For indentation lines
 
@@ -72,6 +72,7 @@ Plug 'tpope/vim-surround' " For tagging
 Plug 'tpope/vim-fugitive' " Git inside vim
 
 Plug 'junegunn/goyo.vim' " Goyo
+Plug 'junegunn/limelight.vim' " Focussed writing - need colour sourt
 
 Plug 'vim-airline/vim-airline' " Vim airline for pretty bar thing
 
@@ -93,6 +94,10 @@ let g:pandoc#modules#disabled = ["keyboard"] " disabling j map from vim-pandoc
 autocmd! User GoyoLeave nested set t_Co=256 | colorscheme gruvbox | :hi Normal guibg=NONE ctermbg=NONE
 " Relative numbers for Goyo
 autocmd! User GoyoEnter nested set nu rnu
+" keybinding for Goyo
+"nnoremap <Leader>gy :Goyo<CR> 
+nnoremap gy :Goyo<CR> 
+autocmd! User GoyoEnter nested Goyo 80
 
 " Color scheme set as gruvbox from plugin
 set t_Co=256
@@ -124,3 +129,17 @@ let g:airline#extensions#tabline#enabled = 1
 set hidden
 " Tab for buffer wildcards
 set wildchar=<Tab> wildmenu wildmode=full
+
+" Calcurse md syntax from Luke Smith
+autocmd BufRead,BufNewFile /tmp/calcurse* set filetype=markdown
+autocmd BufRead,BufNewFile ~/tmp/.calcurse/notes* set filetype=markdown
+
+" netrw settings
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
+let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro' 
+"au BufWinEnter * set number
+nmap #ee :Explore<CR> 
+nmap #ts :Texplore<CR> 
+nmap #vs :Vexplore<CR> 
+nmap #ss :Sexplore<CR> 

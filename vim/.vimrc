@@ -121,14 +121,16 @@ autocmd Filetype tex,latex set spell
 let g:indentLine_setConceal = 0
 autocmd Filetype markdown set spell  
 
-" Turn of the underscore change in R
-let R_assign = 0
 
 " Flavour for tex plugin
 let g:tex_flavor = 'latex'
    
 " Run R in tmux
 "let R_external_term = 1
+" Turn of the underscore change in R
+let R_assign = 0
+" Rely on own syntax highlighting in R
+let R_hl_term = 0
 
 " Buffer Settings:
 " Airline buffer show

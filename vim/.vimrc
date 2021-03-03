@@ -4,6 +4,11 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+" Trying to make it use true colours
+if (has("termguicolors"))
+  set termguicolors
+endif
+
 set nocompatible
 filetype on
 
@@ -81,17 +86,20 @@ Plug 'jalvesaq/vimcmdline' " Nvim-R for Python
 Plug 'vim-pandoc/vim-pandoc-syntax' " Markdown syntax
 Plug 'vim-pandoc/vim-rmarkdown' " Other markdown stuff
 Plug 'morhetz/gruvbox' " Gruv-box theme
+Plug 'arcticicestudio/nord-vim' " Nord theme
+Plug 'jnurmine/Zenburn' " Zen theme
 Plug 'lervag/vimtex' " For tex stuff e.g. autocite hopefully
 Plug 'maverickg/stan.vim' " For Stan syntax highlighting
 Plug 'chrisbra/csv.vim' " For CSV viewing
 Plug 'vim-latex/vim-latex' " For full vimtex
+Plug 'mattn/emmet-vim' " Autocomplete in html 
 
 call plug#end()
 
 let g:pandoc#modules#disabled = ["keyboard"] " disabling j map from vim-pandoc
 
 " Sorting colour for goyo quit
-autocmd! User GoyoLeave nested set t_Co=256 | colorscheme gruvbox | :hi Normal guibg=NONE ctermbg=NONE
+autocmd! User GoyoLeave nested set t_Co=256 | colorscheme nord | :hi Normal guibg=NONE ctermbg=NONE
 " Relative numbers for Goyo
 autocmd! User GoyoEnter nested set nu rnu
 " keybinding for Goyo
@@ -102,8 +110,8 @@ autocmd! User GoyoEnter nested Goyo 80
 " Color scheme set as gruvbox from plugin
 set t_Co=256
 syntax on
-colorscheme gruvbox
-set background=dark
+colorscheme nord
+"set background=dark
 
 " And make transparent
 :hi Normal guibg=NONE ctermbg=NONE
@@ -120,7 +128,7 @@ let R_assign = 0
 let g:tex_flavor = 'latex'
    
 " Run R in tmux
-let R_external_term = 1
+"let R_external_term = 1
 
 " Buffer Settings:
 " Airline buffer show

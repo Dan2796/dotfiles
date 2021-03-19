@@ -1,0 +1,54 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.config/zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt autocd extendedglob nomatch notify
+unsetopt beep
+bindkey -v
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/dan/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+# Prompt
+PROMPT="%F{red}%~"$'\n'"->%f "
+
+# Searching with the arrow keys
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
+
+source ~/.config/zsh-vi-mode/zsh-vi-mode.zsh
+ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
+
+# Aliases for bash
+
+# Auto zoom feh
+alias feh='feh --scale-down'
+
+# Principle of least surprises
+alias vim=nvim
+alias mutt=neomutt
+
+# Bib scripts
+alias accio=accio.sh
+alias bibtag=bibtag.sh
+alias notestag=notestag.sh
+alias refsort=refsort.sh
+alias revelio=revelio.sh
+alias Bibify=Bibify.sh
+alias findref=findref.sh
+alias protego=protego.sh
+alias renameCiteKey=renameCiteKey.sh
+alias manualref=manualref.sh
+alias Cview=CSVviewer.sh
+
+# For ls etc.
+alias ls='ls --color=auto'
+alias la='ls -a'
+alias ll='ls -l'
+
+
+

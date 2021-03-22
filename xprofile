@@ -1,14 +1,9 @@
-# My X Profile 
+# My X Profile
 
 # Set wallpaper
-# ~/.fehbg &
-~/.config/dwmStatusBar.sh &
-~/.config/WallpaperRandomiser.sh &
+~/dotfiles/dwm_status_bar.sh &
+~/dotfiles/wallpaper_randomiser.sh &
 
 picom &
 xfce4-power-manager &
 xset b off &
-
-EDITOR=nvim
-BROWSER=/usr/bin/firefox
-

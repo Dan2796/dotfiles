@@ -153,3 +153,7 @@ nmap #ee :Explore<CR>
 nmap #ts :Texplore<CR> 
 nmap #vs :Vexplore<CR> 
 nmap #ss :Sexplore<CR> 
+
+" Personal dictionary for tag files
+autocmd BufRead ~/nota/collecta/*/tags.txt !tag_collect.sh
+autocmd BufRead ~/nota/collecta/*/tags.txt set complete=k~/nota/altera/dynamic_meta/tag_list.txt

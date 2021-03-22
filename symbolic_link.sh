@@ -11,16 +11,22 @@ ln -sf ~/dotfiles/zsh/zshrc ~/.zshrc
 # R
 ln -sf ~/dotfiles/Rprofile ~/.Rprofile
 
-# Wallpaper
-ln -sf ~/dotfiles/wallpaper_randomiser.sh ~/.config/wallpaper_randomiser.sh 
-
 # Picom
 ln -sf ~/dotfiles/picom.conf ~/.config/picom.conf 
 
 # Newsboat
 ln -sf ~/dotfiles/newsboat/config ~/.config/newsboat 
 
-# Status bar
-ln -sf ~/dotfiles/dwmStatusBar.sh ~/.config/dwmStatusBar.sh 
+# Xprofile
+ln -sf ~/dotfiles/xprofile ~/.xprofile
 
+# Xmodmap
+ln -sf ~/dotfiles/xmod/Xmodmap ~/.Xmodmap
+
+# Zathura
+ln -sf ~/dotfiles/zathurarc ~/.config/zathura/zathurarc
+
+# Ranger
+ln -sf ~/dotfiles/ranger ~/.config/ranger/rc.conf
+ln -sf ~/dotfiles/rifle.conf ~/.config/ranger/rifle.conf
 

@@ -121,6 +121,8 @@ autocmd Filetype tex,latex set spell
 let g:indentLine_setConceal = 0
 autocmd Filetype markdown set spell  
 
+" Get rid of tex <++> thingy
+let g:Imap_UsePlaceHolders = 0
 
 " Flavour for tex plugin
 let g:tex_flavor = 'latex'
@@ -157,3 +159,7 @@ nmap #ss :Sexplore<CR>
 " Personal dictionary for tag files
 autocmd BufRead ~/nota/collecta/*/tags.txt !tag_collect.sh
 autocmd BufRead ~/nota/collecta/*/tags.txt set complete=k~/nota/altera/dynamic_meta/tag_list.txt
+
+" Stop folding on bibs
+autocmd Filetype bib, set nofoldenable 
+

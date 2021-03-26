@@ -2,8 +2,18 @@
 
 # Set wallpaper
 ~/dotfiles/dwm_status_bar.sh &
-~/dotfiles/wallpaper_randomiser.sh &
+#~/dotfiles/wallpaper_randomiser.sh &
+~/dotfiles/minimalist_random.sh &
 
 picom &
 xfce4-power-manager &
 xset b off &
+
+# Set editor
+export VISUAL=nvim
+export EDITOR=nvim
+
+# Paths for dwm
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/btb:$PATH
+export PATH=$HOME/nota/usa/:$PATH

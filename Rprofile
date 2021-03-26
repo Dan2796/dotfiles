@@ -1,3 +1,12 @@
+# -----------------------------------------------------------------------------
+# R profile
+# -----------------------------------------------------------------------------
+
+# Tried to change R directory - can't get working yet
+#Sys.setenv(R_LIBS_USER = file.path("~/.config/R/x86_64-pc-linux-gnu-library/4.0"))
+
+
+# Colour scheme ----------------------------------
 # General ---------------------------------------- 
 
 colorout::setOutputColors(
@@ -57,3 +66,6 @@ colorout::addPattern("* [A-z]* [A-z]*:",               '\x1b[38;2;235;203;139m')
 colorout::addPattern("* [A-z]* [A-z]* [A-z]*:",        '\x1b[38;2;235;203;139m')
 colorout::addPattern("* [A-z]* [A-z]* [A-z]* [A-z]*:", '\x1b[38;2;235;203;139m')
 # So on...
+
+# Welcome message
+message("Hi Dan, good to see you here again.")

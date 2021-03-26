@@ -12,6 +12,7 @@ while true; do
          ~/wallpapers/CyberPunkCity/* \
          ~/wallpapers/GoT/* \
          ~/wallpapers/Fantasy/* \
+         ~/wallpapers/Minimalist/* \
    | shuf -n 1 | xargs feh --bg-fill
 
    sleep 5m

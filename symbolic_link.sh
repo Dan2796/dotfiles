@@ -7,6 +7,7 @@ ln -sf ~/dotfiles/vim/init.vim ~/.config/nvim/init.vim
 
 # Zsh
 ln -sf ~/dotfiles/zsh/zshrc ~/.zshrc 
+ln -sf ~/dotfiles/zsh/zshenv ~/.zshenv
 
 # R
 ln -sf ~/dotfiles/Rprofile ~/.Rprofile

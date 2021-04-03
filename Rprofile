@@ -68,4 +68,4 @@ colorout::addPattern("* [A-z]* [A-z]* [A-z]* [A-z]*:", '\x1b[38;2;235;203;139m')
 # So on...
 
 # Welcome message
-message("Hi Dan, good to see you here again.")
+message("Hi Dan, good to see you here again.\n Hope the work goes well.")

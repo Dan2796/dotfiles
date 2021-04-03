@@ -1,8 +1,12 @@
 #!/bin/sh
 
-pkill .config/dwmStatus
+#pkill dwm_status_bar
 
 while true; do 
+    
+    last_checked=$(cat ~/dotfiles/email_last_synced.txt)
+
+    last_checked_ago=$(($(($(date +%s) - $last_checked))/60))
     
     WIFI=$(nmcli | grep -o 'connected to.\+' |
       sed 's/connected to/WIFI:/g'
@@ -25,7 +29,7 @@ while true; do
 
     DATE=$(date +"%a, %d %b, %H:%M")
 
-    xsetroot -name "$WIFI | Sound: ($MUTE) $SOUND | $BATPERC $BATSTATE | $DATE"
+    xsetroot -name " Email last updated: $last_checked_ago minutes ago. | $WIFI | Sound: ($MUTE) $SOUND | $BATPERC $BATSTATE | $DATE"
     
     sleep 1m
 

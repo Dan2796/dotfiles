@@ -18,7 +18,10 @@ export VISUAL=nvim
 export EDITOR="$VISUAL"
 
 # Prompt
-PROMPT="%F{red}%~"$'\n'"->%f "
+#PROMPT="%F{red}%~"$'\n'"➤➤➤%f "
+#PROMPT="%F{red}%~"$'\n'"༨%f "
+PROMPT="%F{red}%~"$'\n'"λ%f "
+#PROMPT="%F{red}%~"$'\n'"⛰⛰⛰  %f "
 
 # Searching with the arrow keys
 bindkey "^[[A" history-beginning-search-backward
@@ -58,6 +61,7 @@ alias manualref=manualref.sh
 alias Cview=CSVviewer.sh
 
 alias es='email_sync.sh'
+alias send_cal=calendar_mail.sh
 
 # For ls etc.
 alias ls='ls --color=auto'

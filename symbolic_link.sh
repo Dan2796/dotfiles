@@ -28,6 +28,6 @@ ln -sf ~/dotfiles/xmod/Xmodmap ~/.Xmodmap
 ln -sf ~/dotfiles/zathurarc ~/.config/zathura/zathurarc
 
 # Ranger
-ln -sf ~/dotfiles/ranger ~/.config/ranger/rc.conf
-ln -sf ~/dotfiles/rifle.conf ~/.config/ranger/rifle.conf
+ln -sf ~/dotfiles/ranger/rc.conf ~/.config/ranger/rc.conf
+ln -sf ~/dotfiles/ranger/rifle.conf ~/.config/ranger/rifle.conf
 

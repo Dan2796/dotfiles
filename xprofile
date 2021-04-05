@@ -1,9 +1,12 @@
 # My X Profile
 
+dwmblocks &
+# start email syncing loop
+/home/dan/btb/email_loop.sh &
+
 # Set wallpaper
-~/dotfiles/dwm_status_bar.sh &
-#~/dotfiles/wallpaper_randomiser.sh &
-~/dotfiles/minimalist_random.sh &
+#~/dotfiles/wallpaper/wallpaper_randomiser.sh &
+~/dotfiles/wallpaper/minimalist_random.sh &
 
 picom &
 xfce4-power-manager &

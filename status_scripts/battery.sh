@@ -5,11 +5,11 @@ BAT_NUM=$(upower -i $(upower -e | grep 'BAT') | grep -E "percentage" | sed 's/[^
 BAT_STATE=$(upower -i $(upower -e | grep 'BAT') | grep -E "state" | 
   sed 's/\ //g' | sed 's/state://g')
 BAT_TIME=$(upower -i $(upower -e | grep 'BAT') | grep -E "time\ to" |
-  sed 's/\ //g' | sed 's/timetoempty://g' | sed 's/hours/ hrs/g')
+  sed 's/\ //g' | sed 's/timetoempty://g' | sed 's/timetofull://g' | sed 's/hours/ hrs/g' | sed 's/minutes/ mins/g' )
 
 if (( $BAT_NUM <= 20 )); then
   BAT_SYM=""
-  if (( $BAT_STATE == "charging" )); then
+  if [ $BAT_STATE != "charging" ]; then
     notify-send "BATTERY LOW!"
   fi
 elif (( $BAT_NUM <= 40 )); then
@@ -23,10 +23,6 @@ elif (( $BAT_NUM >= 95 )); then
 else 
   BAT_NUM=""
 fi
-
-
-
-
 
 case $BAT_STATE in
   charging) 

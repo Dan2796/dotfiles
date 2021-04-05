@@ -9,10 +9,9 @@ email_numbers=$(cat ~/dotfiles/status_scripts/email_number.txt)
 email_sync=$(cat ~/dotfiles/status_scripts/email_syncing.txt)
 
 if (( last_checked_seconds <= 10 )); then
-echo " $email_numbers  synced just now $email_sync"
+echo " $email_sync $email_numbers  just now"
 elif (( last_checked_seconds <= 60 )); then
-echo " $email_numbers  synced 1 min ago $email_sync"
+echo " $email_sync $email_numbers  1 min"
 else
-echo " $email_numbers  synced $last_checked_ago mins ago $email_sync"
+echo " $email_sync $email_numbers  $last_checked_ago mins"
 fi
-

@@ -9,22 +9,25 @@ BAT_TIME=$(upower -i $(upower -e | grep 'BAT') | grep -E "time\ to" |
 
 if (( $BAT_NUM <= 20 )); then
   BAT_SYM=""
-  if [ $BAT_STATE != "charging" ]; then
+  if (( $BAT_STATE != "charging" )); then
     notify-send "BATTERY LOW!"
   fi
 elif (( $BAT_NUM <= 40 )); then
   BAT_SYM=""
 elif (( $BAT_NUM <= 60 )); then
   BAT_SYM=""
-elif (( $BAT_NUM <= 80 )); then
+elif (( $BAT_NUM <= 95 )); then
   BAT_SYM=" "
-elif (( $BAT_NUM >= 95 )); then
+elif (( $BAT_NUM > 95 )); then
   BAT_SYM=""
 else 
   BAT_NUM=""
 fi
 
 case $BAT_STATE in
+  fully-charged)
+    echo "$BAT_SYM Full"
+    ;;
   charging) 
     echo "$BAT_SYM $BAT_NUM%  - $BAT_TIME until full"
     ;;

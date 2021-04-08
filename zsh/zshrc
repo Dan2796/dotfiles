@@ -47,6 +47,11 @@ alias feh='feh --scale-down'
 alias vim=nvim
 alias mutt=neomutt
 
+# Watson commands
+alias wstart=watson_start.sh
+alias wcancel=watson_cancel.sh
+alias wstop=watson_stop.sh
+
 # Bib scripts
 alias accio=accio.sh
 alias bibtag=bibtag.sh

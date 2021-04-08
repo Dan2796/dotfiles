@@ -16,7 +16,8 @@ ln -sf ~/dotfiles/Rprofile ~/.Rprofile
 ln -sf ~/dotfiles/picom.conf ~/.config/picom.conf 
 
 # Newsboat
-ln -sf ~/dotfiles/newsboat/config ~/.config/newsboat 
+ln -sf ~/dotfiles/newsboat/config ~/.newsboat/config
+ln -sf ~/dotfiles/newsboat/urls ~/.newsboat/urls
 
 # Xprofile
 ln -sf ~/dotfiles/xprofile ~/.xprofile

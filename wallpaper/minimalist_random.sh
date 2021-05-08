@@ -6,7 +6,7 @@ pkill .config/wallpaper_randomiser.sh
 
 while true; do
 
-   ls -d ~/wallpapers/Minimalist/* \
+   ls -d ~/wallpapers/minimalist/* \
    | shuf -n 1 | xargs feh --bg-fill
 
    sleep 5m

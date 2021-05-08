@@ -69,3 +69,13 @@ colorout::addPattern("* [A-z]* [A-z]* [A-z]* [A-z]*:", '\x1b[38;2;235;203;139m')
 
 # Welcome message
 message("Hi Dan, good to see you here again.\n Hope the work goes well.")
+
+# Get rid of save workspace question
+utils::assignInNamespace(
+  "q", 
+  function(save = "no", status = 0, runLast = TRUE) 
+  {
+    .Internal(quit(save, status, runLast))
+  }, 
+  "base"
+)

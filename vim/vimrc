@@ -93,7 +93,7 @@ Plug 'maverickg/stan.vim' " For Stan syntax highlighting
 Plug 'chrisbra/csv.vim' " For CSV viewing
 Plug 'vim-latex/vim-latex' " For full vimtex
 Plug 'mattn/emmet-vim' " Autocomplete in html 
-
+Plug 'junegunn/fzf' " Fuzzy finder
 call plug#end()
 
 let g:pandoc#modules#disabled = ["keyboard"] " disabling j map from vim-pandoc
@@ -158,8 +158,14 @@ nmap #ss :Sexplore<CR>
 
 " Personal dictionary for tag files
 autocmd BufRead ~/nota/collecta/*/tags.txt !tag_collect.sh
-autocmd BufRead ~/nota/collecta/*/tags.txt set complete=k~/nota/altera/dynamic_meta/tag_list.txt
+autocmd BufRead */tags.txt set complete=k~/nota/altera/dynamic_meta/tag_list.txt
 
 " Stop folding on bibs
 autocmd Filetype bib, set nofoldenable 
 
+" Fuzzy finder settings
+nnoremap <C-p> :FZF<CR>
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-i': 'split',
+  \ 'ctrl-v': 'vsplit' }

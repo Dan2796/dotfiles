@@ -1,0 +1,7 @@
+# Config for signal
+
+wrap-at = 80
+enable-notifications = false
+save-history = true
+color = true
+contacts-sort-alpha = false

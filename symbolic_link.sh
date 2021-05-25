@@ -35,3 +35,9 @@ ln -sf ~/dotfiles/ranger/rifle.conf ~/.config/ranger/rifle.conf
 # Tmux
 ln -sf ~/dotfiles/tmux.conf ~/.config/tmux/tmux.conf
 
+# Scli
+ln -sf ~/dotfiles/sclirc ~/.config/sclirc
+
+# Dunst
+ln -sf ~/dotfiles/dunstrc ~/.config/dunst/dunstrc
+

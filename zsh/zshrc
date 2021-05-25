@@ -70,9 +70,17 @@ alias send_cal=calendar_mail.sh
 
 # For ls etc.
 alias ls='ls --color=auto'
+alias l='ls -l --color=auto'
 alias la='ls -A'
 alias ll='ls -l'
 alias lla='ls -lA'
+
+# For going backwards
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+alias .......='cd ../../../../../..'
 
 # For github
 alias gs='git status'

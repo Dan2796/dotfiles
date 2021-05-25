@@ -4,6 +4,10 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+" Spelling
+set spellfile=~/.vim/spell/en.utf-8.add
+
+
 " Trying to make it use true colours
 if (has("termguicolors"))
   set termguicolors
@@ -91,7 +95,7 @@ Plug 'jnurmine/Zenburn' " Zen theme
 Plug 'lervag/vimtex' " For tex stuff e.g. autocite hopefully
 Plug 'maverickg/stan.vim' " For Stan syntax highlighting
 Plug 'chrisbra/csv.vim' " For CSV viewing
-Plug 'vim-latex/vim-latex' " For full vimtex
+"Plug 'vim-latex/vim-latex' " For full vimtex
 Plug 'mattn/emmet-vim' " Autocomplete in html 
 Plug 'junegunn/fzf' " Fuzzy finder
 call plug#end()
@@ -117,16 +121,20 @@ colorscheme nord
 :hi Normal guibg=NONE ctermbg=NONE
             
 " Spelling / conceal in latex and md
-autocmd Filetype tex,latex set spell 
+autocmd Filetype tex,latex set spell spelllang=en_gb
 let g:indentLine_setConceal = 0
-autocmd Filetype markdown set spell  
+autocmd Filetype markdown set spell spelllang=en_gb
+autocmd Filetype text set spell spelllang=en_gb
 
 " Get rid of tex <++> thingy
 let g:Imap_UsePlaceHolders = 0
 
 " Flavour for tex plugin
 let g:tex_flavor = 'latex'
-   
+
+" Let vimtex fold
+let g:vimtex_fold_enabled = 1
+
 " Run R in tmux
 "let R_external_term = 1
 " Turn of the underscore change in R

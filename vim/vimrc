@@ -111,11 +111,11 @@ autocmd! User GoyoEnter nested set nu rnu
 nnoremap gy :Goyo<CR> 
 autocmd! User GoyoEnter nested Goyo 80
 
-" Color scheme set as gruvbox from plugin
+" Color scheme set as nord from plugin
 set t_Co=256
 syntax on
+set background=dark
 colorscheme nord
-"set background=dark
 
 " And make transparent
 :hi Normal guibg=NONE ctermbg=NONE

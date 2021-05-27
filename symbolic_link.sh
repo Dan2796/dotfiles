@@ -41,3 +41,5 @@ ln -sf ~/dotfiles/sclirc ~/.config/sclirc
 # Dunst
 ln -sf ~/dotfiles/dunstrc ~/.config/dunst/dunstrc
 
+# Spotify
+ln -sf ~/dotfiles/spotifyd.conf ~/.config/spotifyd/spotifyd.conf

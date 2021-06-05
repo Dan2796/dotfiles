@@ -105,11 +105,12 @@ let g:pandoc#modules#disabled = ["keyboard"] " disabling j map from vim-pandoc
 " Sorting colour for goyo quit
 autocmd! User GoyoLeave nested set t_Co=256 | colorscheme nord | :hi Normal guibg=NONE ctermbg=NONE
 " Relative numbers for Goyo
-autocmd! User GoyoEnter nested set nu rnu
 " keybinding for Goyo
 "nnoremap <Leader>gy :Goyo<CR> 
 nnoremap gy :Goyo<CR> 
-autocmd! User GoyoEnter nested Goyo 80
+autocmd! User GoyoEnter nested Goyo 80 
+autocmd! User GoyoEnter nested set nu rnu
+" keybinding for Goyo
 
 " Color scheme set as nord from plugin
 set t_Co=256

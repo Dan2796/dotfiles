@@ -10,7 +10,8 @@ ln -sf ~/dotfiles/zsh/zshrc ~/.zshrc
 ln -sf ~/dotfiles/zsh/zshenv ~/.zshenv
 
 # R
-ln -sf ~/dotfiles/Rprofile ~/.Rprofile
+ln -sf ~/dotfiles/R/Rprofile ~/.Rprofile
+ln -sf ~/dotfiles/R/Renviron ~/.Renviron
 
 # Picom
 ln -sf ~/dotfiles/picom.conf ~/.config/picom.conf 

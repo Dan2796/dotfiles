@@ -2,13 +2,8 @@
 # R profile
 # -----------------------------------------------------------------------------
 
-# Tried to change R directory - can't get working yet
-#Sys.setenv(R_LIBS_USER = file.path("~/.config/R/x86_64-pc-linux-gnu-library/4.0"))
-
-
 # Colour scheme ----------------------------------
 # General ---------------------------------------- 
-
 colorout::setOutputColors(
   
   index    = '\x1b[38;2;76;86;106m',

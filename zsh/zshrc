@@ -51,6 +51,8 @@ alias mutt=neomutt
 alias wstart=watson_start.sh
 alias wcancel=watson_cancel.sh
 alias wstop=watson_stop.sh
+alias tstart=timetrace_start.sh
+alias tstop=timetrace_stop.sh
 
 # Bib scripts
 alias accio=accio.sh

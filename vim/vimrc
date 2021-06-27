@@ -98,6 +98,8 @@ Plug 'chrisbra/csv.vim' " For CSV viewing
 "Plug 'vim-latex/vim-latex' " For full vimtex
 Plug 'mattn/emmet-vim' " Autocomplete in html 
 Plug 'junegunn/fzf' " Fuzzy finder
+"Plug 'ervandew/supertab' " Tab completion
+Plug 'gaalcaras/ncm-R' " Completion in R
 call plug#end()
 
 let g:pandoc#modules#disabled = ["keyboard"] " disabling j map from vim-pandoc
@@ -117,9 +119,13 @@ set t_Co=256
 syntax on
 set background=dark
 colorscheme nord
-
 " And make transparent
 :hi Normal guibg=NONE ctermbg=NONE
+
+" Or for sunny days:
+"set background=light
+"colorscheme gruvbox
+
             
 " Spelling / conceal in latex and md
 autocmd Filetype tex,latex set spell spelllang=en_gb

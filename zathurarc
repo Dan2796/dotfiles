@@ -1,5 +1,5 @@
 set selection-clipboard clipboard
-set recolor true 
+# set recolor true 
 
 # Mappings for nota
 map [normal] vn feedkeys ":exec sh -c 'st nvim $(dirname $FILE)/notes.ms'<Return>"

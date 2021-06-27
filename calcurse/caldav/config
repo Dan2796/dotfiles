@@ -1,0 +1,11 @@
+[General]
+Hostname = apidata.googleusercontent.com
+Path = /caldav/v2/l54cj0rp6qd3rdlhpq2v2hn65c@group.calendar.google.com/events/
+AuthMethod = oauth2    
+SyncFilter = cal
+DryRun = No
+[OAuth2]
+ClientID = $(pass show calcurse_client_id)
+ClientSecret = $(pass show calcurse_client_secret)
+Scope = https://www.googleapis.com/auth/calendar
+RedirectURI = http://127.0.0.1

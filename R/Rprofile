@@ -74,3 +74,11 @@ utils::assignInNamespace(
   }, 
   "base"
 )
+
+# Source my useful functions
+useful_functions_files <- list.files(path = "~/functions_for_R",
+                                     full.names = TRUE,
+                                     pattern = "*.R")
+# invisible used to suppress the list output - I just want to read them
+invisible(lapply(useful_functions_files, source)) 
+

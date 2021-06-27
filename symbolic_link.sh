@@ -47,3 +47,6 @@ ln -sf ~/dotfiles/spotifyd.conf ~/.config/spotifyd/spotifyd.conf
 
 # SSH
 ln -sf ~/dotfiles/ssh_config ~/.ssh/config
+
+# Calcurse
+ln -sf ~/dotfiles/calcurse/ ~/.config/calcurse

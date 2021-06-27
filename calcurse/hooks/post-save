@@ -41,7 +41,7 @@ if [ -d caldav ] && command -v calcurse-caldav >/dev/null; then
 	(
 		date="$(date +'%b %d %H:%M:%S')"
 		echo "$date Running calcurse-caldav from the post-save hook..."
-		calcurse-caldav
+		calcurse-caldav && calcurse-caldav
 		echo
 	) >>caldav/log 2>&1 &
 fi

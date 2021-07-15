@@ -1,6 +1,7 @@
 #!/bin/sh
 
-BAT_NUM=$(upower -i $(upower -e | grep 'BAT') | grep -E "percentage" | sed 's/[^0-9]*//g')
+#BAT_NUM=$(upower -i $(upower -e | grep 'BAT') | grep -E "percentage" | sed 's/[^0-9]*//g')
+BAT_NUM=$(upower -i $(upower -e | grep 'BAT') | grep -E "percentage" | sed 's/[^0-9,.]*//g' | awk '{printf("%.0f\n", $1)}')
 
 BAT_STATE=$(upower -i $(upower -e | grep 'BAT') | grep -E "state" | 
   sed 's/\ //g' | sed 's/state://g')

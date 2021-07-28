@@ -8,7 +8,7 @@ dwmblocks &
 #~/dotfiles/wallpaper/wallpaper_randomiser.sh &
 ~/dotfiles/wallpaper/minimalist_random.sh &
 
-picom &
+picom --experimental-backends &
 xfce4-power-manager &
 xset b off &
 

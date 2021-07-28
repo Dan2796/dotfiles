@@ -9,5 +9,5 @@ else
   MUTE=""
 fi
 
-echo " $SOUND$MUTE"
+echo "^c#434c5e^^b#434c5e^^c#d8dee9^  $SOUND$MUTE"
 

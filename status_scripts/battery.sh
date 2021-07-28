@@ -26,13 +26,13 @@ fi
 
 case $BAT_STATE in
   fully-charged)
-    echo "$BAT_SYM Full"
+    echo "^c#b48ead^^c#2e3440^^b#b48ead^ $BAT_SYM Full"
     ;;
   charging) 
-    echo "$BAT_SYM $BAT_NUM%  - $BAT_TIME until full"
+    echo "^c#b48ead^^c#2e3440^^b#b48ead^ $BAT_SYM $BAT_NUM%  - $BAT_TIME until full"
     ;;
   discharging) 
-    echo "$BAT_SYM $BAT_NUM% - $BAT_TIME left"
+    echo "^c#b48ead^^c#2e3440^^b#b48ead^ $BAT_SYM $BAT_NUM% - $BAT_TIME left"
     ;;
 esac
 

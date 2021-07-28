@@ -98,6 +98,7 @@ Plug 'chrisbra/csv.vim' " For CSV viewing
 "Plug 'vim-latex/vim-latex' " For full vimtex
 Plug 'mattn/emmet-vim' " Autocomplete in html 
 Plug 'junegunn/fzf' " Fuzzy finder
+Plug 'junegunn/fzf.vim' " Fuzzy finder vim plugin
 "Plug 'ervandew/supertab' " Tab completion
 Plug 'gaalcaras/ncm-R' " Completion in R
 call plug#end()
@@ -179,7 +180,12 @@ autocmd BufRead */tags.txt set complete=k~/nota/altera/dynamic_meta/tag_list.txt
 autocmd Filetype bib, set nofoldenable 
 
 " Fuzzy finder settings
-nnoremap <C-p> :FZF<CR>
+"command! -bang ProjectFiles call fzf#vim#files('~/projects/brexit_campaign/', <bang>0)
+command! -bang ProjectFiles call fzf#vim#files('~/projects/brexit_campaign/', <bang>0)
+command! -bang AllFiles call fzf#vim#files('~/projects/', <bang>0)
+"nnoremap <C-p> :FZF<CR>
+" Currently a hack - need to find out how to fzf with tmux main folder 
+nnoremap <C-p> :ProjectFiles<CR>
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-i': 'split',

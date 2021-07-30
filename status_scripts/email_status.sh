@@ -13,9 +13,9 @@ else
 fi
 
 if (( last_checked_seconds <= 10 )); then
-echo "^c#434c5e^^b#434c5e^^c#d8dee9^ $email_sync$email_numbers  just now"
+echo "^c#81a1c1^^b#81a1c1^^c#2e3440^ $email_sync$email_numbers  just now"
 elif (( last_checked_seconds <= 120 )); then
-echo "^c#434c5e^^b#434c5e^^c#d8dee9^ $email_sync$email_numbers  1 min"
+echo "^c#81a1c1^^b#81a1c1^^c#2e3440^ $email_sync$email_numbers  1 min"
 else
-echo "^c#434c5e^^b#434c5e^^c#d8dee9^ $email_sync$email_numbers  $last_checked_ago mins"
+echo "^c#81a1c1^^b#81a1c1^^c#2e3440^ $email_sync$email_numbers  $last_checked_ago mins"
 fi

@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# Arrow is given in the timetrace one so it can change colour
+LHS_ARROW="^b#4c566a^^c#d8dee9^"
+#LHS_ARROW="^b#5e81ac^^c#2e3440^"
+
 # Show syncing time
 last_checked=$(cat ~/dotfiles/status_scripts/email_last_synced.txt)
 last_checked_seconds=$(($(date +%s) - $last_checked))
@@ -13,9 +17,11 @@ else
 fi
 
 if (( last_checked_seconds <= 10 )); then
-echo "^c#81a1c1^^b#81a1c1^^c#2e3440^ $email_sync$email_numbers  just now"
+  long_ago_message="just now"
 elif (( last_checked_seconds <= 120 )); then
-echo "^c#81a1c1^^b#81a1c1^^c#2e3440^ $email_sync$email_numbers  1 min"
+  long_ago_message="1 min"
 else
-echo "^c#81a1c1^^b#81a1c1^^c#2e3440^ $email_sync$email_numbers  $last_checked_ago mins"
+  long_ago_message="$last_checked_ago mins"
 fi
+
+echo "$LHS_ARROW $email_sync$email_numbers   $long_ago_message"

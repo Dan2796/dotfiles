@@ -1,6 +1,6 @@
 # My X Profile
 
-dwmblocks &
+#dwmblocks &
 # start email syncing loop
 /home/dan/btb/email_loop.sh &
 

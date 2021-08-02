@@ -1,5 +1,6 @@
 #!/bin/sh
 
+LHS_ARROW="^c#434c5e^^c#d8dee9^^b#434c5e^"
 # Sound
 SOUND=$(pactl list sinks | grep 'Volume: f' | grep -o '[0-9]\+%' | head -1)
 
@@ -9,5 +10,5 @@ else
   MUTE=""
 fi
 
-echo "^c#d08770^^b#d08770^^c#2e3440^  $SOUND$MUTE"
+echo "$LHS_ARROW  $SOUND$MUTE"
 

@@ -8,7 +8,6 @@ colorout::setOutputColors(
   
   index    = '\x1b[38;2;76;86;106m',
   normal   = '\x1b[38;2;216;222;233m',
-
   number   = '\x1b[38;2;236;239;244m',
   negnum   = '\x1b[38;2;180;142;173m',
   zero     = '\x1b[38;2;136;192;208m', zero.limit = 0.01,
@@ -63,7 +62,18 @@ colorout::addPattern("* [A-z]* [A-z]* [A-z]* [A-z]*:", '\x1b[38;2;235;203;139m')
 # So on...
 
 # Welcome message
-message("Hi Dan, good to see you here again.\n Hope the work goes well.")
+message("Hi Dan, good to see you here again.")
+message("\n")
+message("I hope the work goes well.")
+message("\n")
+random_passage <- as.numeric(round(stats::runif(1,1,507),0))
+message(paste0("Either way, enjoy this short quote from Marcus Aurelius' Meditations, passage ", random_passage, "."))
+message("\n")
+paste(meditations::meditations(random_passage))
+#message(meditations::meditations(22)) # a good quote for work
+message("\n")
+
+# If you want a random one, not working yet but:
 
 # Get rid of save workspace question
 utils::assignInNamespace(

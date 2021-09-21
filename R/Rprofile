@@ -86,9 +86,10 @@ utils::assignInNamespace(
 )
 
 # Source my useful functions
-useful_functions_files <- list.files(path = "~/functions_for_R",
+useful_functions_files <- list.files(path = "~/code_betteR/",
                                      full.names = TRUE,
-                                     pattern = "*.R")
+                                     recursive = TRUE,
+                                     pattern = ".R")
+
 # invisible used to suppress the list output - I just want to read them
 invisible(lapply(useful_functions_files, source)) 
-

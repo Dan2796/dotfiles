@@ -1,16 +1,17 @@
 # My X Profile
 
-#dwmblocks &
+dwmblocks &
 # start email syncing loop
 /home/dan/btb/email_loop.sh &
 
 # Set wallpaper
-#~/dotfiles/wallpaper/wallpaper_randomiser.sh &
-~/dotfiles/wallpaper/minimalist_random.sh &
+~/dotfiles/wallpaper/wallpaper_randomiser.sh &
+#~/dotfiles/wallpaper/minimalist_random.sh &
+feh --bg-fill ~/wallpapers/minimalist/203545.jpg &
 
 picom --experimental-backends &
 xfce4-power-manager &
-xset b off &
+xset b off 
 
 # Set editor
 export VISUAL=nvim
@@ -20,3 +21,4 @@ export EDITOR=nvim
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/btb:$PATH
 export PATH=$HOME/nota/usa/:$PATH
+

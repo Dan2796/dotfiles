@@ -18,7 +18,7 @@ filetype on
 
 " Remap
 inoremap jk <Esc>
-nmap <Space>c  : w <enter> : !pdflatex % <enter>
+nmap <Space>c  : w <enter> : !xelatex % <enter>
 
 " Relative line jump global for counts
 nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
@@ -57,6 +57,7 @@ set viminfo='100,f1
 
 " Fold method
 autocmd Filetype r set foldmethod=marker  
+autocmd Filetype rmd set foldmethod=marker  
 "set foldmethod=marker
 set foldmethod=syntax
 
@@ -101,6 +102,9 @@ Plug 'junegunn/fzf' " Fuzzy finder
 Plug 'junegunn/fzf.vim' " Fuzzy finder vim plugin
 "Plug 'ervandew/supertab' " Tab completion
 Plug 'gaalcaras/ncm-R' " Completion in R
+Plug 'ervandew/supertab' " Tab completion
+
+Plug 'freitass/todo.txt-vim' " Todo syntax and keybindings
 call plug#end()
 
 let g:pandoc#modules#disabled = ["keyboard"] " disabling j map from vim-pandoc
@@ -144,11 +148,30 @@ let g:tex_flavor = 'latex'
 let g:vimtex_fold_enabled = 1
 
 " Run R in tmux
-"let R_external_term = 1
+let R_external_term = 1
 " Turn of the underscore change in R
 let R_assign = 0
 " Rely on own syntax highlighting in R
 let R_hl_term = 0
+
+" Tags file for R
+set tags+=rtags
+set tags+=../rtags " for tags stored one level higher
+set tags+=../../rtags " for tags stored two levels higher
+" from https://tinyheero.github.io/2017/05/13/r-vim-ctags.html
+let g:tagbar_type_r = {
+    \ 'ctagstype' : 'r',
+    \ 'kinds'     : [
+        \ 'f:Functions',
+        \ 'g:GlobalVariables',
+        \ 'v:FunctionVariables',
+    \ ]
+\ }
+
+" Trying to get R fixed width
+let R_rconsole_width = 130
+let R_min_editor_width = 80
+let nosplitright = 1 " not working currently
 
 " Buffer Settings:
 " Airline buffer show
@@ -176,12 +199,17 @@ nmap #ss :Sexplore<CR>
 autocmd BufRead ~/nota/collecta/*/tags.txt !tag_collect.sh
 autocmd BufRead */tags.txt set complete=k~/nota/altera/dynamic_meta/tag_list.txt
 
+" Personal dictionary for bes names in R
+autocmd Filetype r set complete=k~/functions_for_R/besip_names.txt
+
 " Stop folding on bibs
 autocmd Filetype bib, set nofoldenable 
 
 " Fuzzy finder settings
+command! -bang ProjectFiles call fzf#vim#files('~/projects/covid_handling_experiment/', <bang>0)
+"command! -bang ProjectFiles call fzf#vim#files('~/projects/losing_support_paper/', <bang>0)
 "command! -bang ProjectFiles call fzf#vim#files('~/projects/brexit_campaign/', <bang>0)
-command! -bang ProjectFiles call fzf#vim#files('~/projects/brexit_campaign/', <bang>0)
+"command! -bang ProjectFiles call fzf#vim#files('~/projects/polling_ge19/', <bang>0)
 command! -bang AllFiles call fzf#vim#files('~/projects/', <bang>0)
 "nnoremap <C-p> :FZF<CR>
 " Currently a hack - need to find out how to fzf with tmux main folder 

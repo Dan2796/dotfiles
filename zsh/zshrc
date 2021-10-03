@@ -83,6 +83,11 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 alias .......='cd ../../../../../..'
+alias cd ...='cd ../..'
+alias cd ....='cd ../../..'
+alias cd .....='cd ../../../..'
+alias cd ......='cd ../../../../..'
+alias cd .......='cd ../../../../../..'
 
 # For github
 alias gs='git status'

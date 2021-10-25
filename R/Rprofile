@@ -1,9 +1,4 @@
-# -----------------------------------------------------------------------------
-# R profile
-# -----------------------------------------------------------------------------
-
-# Colour scheme ----------------------------------
-# General ---------------------------------------- 
+# Colour scheme from colourout package
 colorout::setOutputColors(
   
   index    = '\x1b[38;2;76;86;106m',
@@ -27,17 +22,10 @@ colorout::setOutputColors(
 )
 
 # Custom patterns --------------------------------
-
-# NOTE Do not copy all. Pick what you use/like.
-
 # _ {data.table} ---------------------------------
-
 colorout::addPattern('[0-9]*:',  '\x1b[38;2;143;188;187m')  # Row num
 colorout::addPattern('---',      '\x1b[38;2;76;86;106m')  # Row splitter 
 colorout::addPattern('<[a-z]*>', '\x1b[38;2;143;188;187m')  # Col class 
-
-# _ `str` ----------------------------------------
-
 # Class
 colorout::addPattern(' num ',        '\x1b[38;2;143;188;187m')
 colorout::addPattern(' int ',        '\x1b[38;2;143;188;187m')
@@ -51,31 +39,29 @@ colorout::addPattern(' lgcl ',       '\x1b[38;2;143;188;187m')
 colorout::addPattern(' cplx ',       '\x1b[38;2;143;188;187m')
 # Misc
 colorout::addPattern('$ ',           '\x1b[38;2;76;86;106m')
-
-# _ `str`, {mlr3} --------------------------------
-
 # R6 field name
 colorout::addPattern('* [A-z]*:',                      '\x1b[38;2;235;203;139m')
 colorout::addPattern("* [A-z]* [A-z]*:",               '\x1b[38;2;235;203;139m')
 colorout::addPattern("* [A-z]* [A-z]* [A-z]*:",        '\x1b[38;2;235;203;139m')
 colorout::addPattern("* [A-z]* [A-z]* [A-z]* [A-z]*:", '\x1b[38;2;235;203;139m')
-# So on...
+
+
+# Prompt
+options(prompt = "Λ ")
 
 # Welcome message
-message("Hi Dan, good to see you here again.")
-message("\n")
-message("I hope the work goes well.")
-message("\n")
-random_passage <- as.numeric(round(stats::runif(1,1,507),0))
-message(paste0("Either way, enjoy this short quote from Marcus Aurelius' Meditations, passage ", random_passage, "."))
-message("\n")
-paste(meditations::meditations(random_passage))
-#message(meditations::meditations(22)) # a good quote for work
-message("\n")
+  message("Hi Dan, good to see you here again.")
+  message("\n")
+  message("I hope the work goes well.")
+  message("\n")
+  random_passage <- as.numeric(round(stats::runif(1,1,507),0))
+  message(paste0("Either way, enjoy this short quote from Marcus Aurelius' Meditations, passage ", random_passage, "."))
+  message("\n")
+  try(paste(meditations::meditations(random_passage)), silent = TRUE)
+  #message(meditations::meditations(22)) # a good quote for work
+  message("\n")
 
-# If you want a random one, not working yet but:
-
-# Get rid of save workspace question
+# Get rid of save workspace question if using q()
 utils::assignInNamespace(
   "q", 
   function(save = "no", status = 0, runLast = TRUE) 
@@ -90,6 +76,12 @@ useful_functions_files <- list.files(path = "~/code_betteR/",
                                      full.names = TRUE,
                                      recursive = TRUE,
                                      pattern = ".R")
-
 # invisible used to suppress the list output - I just want to read them
 invisible(lapply(useful_functions_files, source)) 
+
+# Set cran mirror 
+local({
+  r = getOption("repos")             
+  r["CRAN"] = "https://cran.rstudio.com/"
+  options(repos = r)
+})

@@ -50,16 +50,16 @@ colorout::addPattern("* [A-z]* [A-z]* [A-z]* [A-z]*:", '\x1b[38;2;235;203;139m')
 options(prompt = "Λ ")
 
 # Welcome message
-  message("Hi Dan, good to see you here again.")
-  message("\n")
-  message("I hope the work goes well.")
-  message("\n")
-  random_passage <- as.numeric(round(stats::runif(1,1,507),0))
-  message(paste0("Either way, enjoy this short quote from Marcus Aurelius' Meditations, passage ", random_passage, "."))
-  message("\n")
-  try(paste(meditations::meditations(random_passage)), silent = TRUE)
-  #message(meditations::meditations(22)) # a good quote for work
-  message("\n")
+  #message("Hi Dan, good to see you here again.")
+  #message("\n")
+  #message("I hope the work goes well.")
+  #message("\n")
+  #random_passage <- as.numeric(round(stats::runif(1,1,507),0))
+  #message(paste0("Either way, enjoy this short quote from Marcus Aurelius' Meditations, passage ", random_passage, "."))
+  #message("\n")
+  #try(paste(meditations::meditations(random_passage)), silent = TRUE)
+  ##message(meditations::meditations(22)) # a good quote for work
+  #message("\n")
 
 # Get rid of save workspace question if using q()
 utils::assignInNamespace(

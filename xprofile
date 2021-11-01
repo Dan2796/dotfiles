@@ -4,6 +4,9 @@ dwmblocks &
 # start email syncing loop
 /home/dan/btb/email_loop.sh &
 
+# Start nxcloud sync
+nextcloud &
+
 # Set wallpaper
 ~/dotfiles/wallpaper/wallpaper_randomiser.sh &
 #~/dotfiles/wallpaper/minimalist_random.sh &

@@ -16,7 +16,8 @@ elif [[ $current_project == "" ]]; then
   RHS_ARROW=""
 else
   time_symbol=" $current_project"
-  LHS_ARROW="^c#bf616a^^c#d8dee9^^b#bf616a^"
+  #LHS_ARROW="^c#bf616a^^c#d8dee9^^b#bf616a^" # for red arrow
+  LHS_ARROW="^c#26697F^^c#d8dee9^^b#26697F^" # for red arrow
   RHS_ARROW="^c#4c566a^^b#4c566a^"
 fi
 

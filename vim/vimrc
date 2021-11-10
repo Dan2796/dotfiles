@@ -206,8 +206,8 @@ autocmd Filetype r set complete=k~/functions_for_R/besip_names.txt
 autocmd Filetype bib, set nofoldenable 
 
 " Fuzzy finder settings
-command! -bang ProjectFiles call fzf#vim#files('~/projects/covid_handling_experiment/', <bang>0)
-"command! -bang ProjectFiles call fzf#vim#files('~/projects/losing_support_paper/', <bang>0)
+"command! -bang ProjectFiles call fzf#vim#files('~/projects/covid_handling_experiment/', <bang>0)
+command! -bang ProjectFiles call fzf#vim#files('~/projects/losing_support_paper/', <bang>0)
 "command! -bang ProjectFiles call fzf#vim#files('~/projects/brexit_campaign/', <bang>0)
 "command! -bang ProjectFiles call fzf#vim#files('~/projects/polling_ge19/', <bang>0)
 command! -bang AllFiles call fzf#vim#files('~/projects/', <bang>0)

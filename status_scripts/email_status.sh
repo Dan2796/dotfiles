@@ -24,4 +24,11 @@ else
   long_ago_message="$last_checked_ago mins"
 fi
 
-echo "$LHS_ARROW $email_sync$email_numbers   $long_ago_message"
+if [[ -f "/home/dan/dotfiles/status_scripts/timetrace_status.txt" ]]; then
+  OUTPUT="$LHS_ARROW The emails can wait"
+else 
+  OUTPUT="$LHS_ARROW $email_sync$email_numbers   $long_ago_message"
+fi
+
+echo $OUTPUT
+

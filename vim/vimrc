@@ -7,6 +7,9 @@ endif
 " Spelling
 set spellfile=~/.vim/spell/en.utf-8.add
 
+" Shortcut for buffer switching
+nmap <Tab> :bn<CR>
+nmap <S-Tab> :bp<CR>
 
 " Trying to make it use true colours
 if (has("termguicolors"))
@@ -65,7 +68,7 @@ set foldmethod=syntax
 let maplocalleader = ','
 
 " Shortcut for running python
-nnoremap <F5> <Esc>:w<CR>:!python %<CR>
+nnoremap <F5> <Esc>:w<CR>:!python3 %<CR>
 
 " Advanced
 set ruler " Show info. at bottom
@@ -148,7 +151,7 @@ let g:tex_flavor = 'latex'
 let g:vimtex_fold_enabled = 1
 
 " Run R in tmux
-let R_external_term = 1
+ let R_external_term = 1
 " Turn of the underscore change in R
 let R_assign = 0
 " Rely on own syntax highlighting in R
@@ -206,8 +209,9 @@ autocmd Filetype r set complete=k~/functions_for_R/besip_names.txt
 autocmd Filetype bib, set nofoldenable 
 
 " Fuzzy finder settings
+command! -bang ProjectFiles call fzf#vim#files('~/projects/eu_identities/', <bang>0)
 "command! -bang ProjectFiles call fzf#vim#files('~/projects/covid_handling_experiment/', <bang>0)
-command! -bang ProjectFiles call fzf#vim#files('~/projects/losing_support_paper/', <bang>0)
+"command! -bang ProjectFiles call fzf#vim#files('~/projects/losing_support_paper/', <bang>0)
 "command! -bang ProjectFiles call fzf#vim#files('~/projects/brexit_campaign/', <bang>0)
 "command! -bang ProjectFiles call fzf#vim#files('~/projects/polling_ge19/', <bang>0)
 command! -bang AllFiles call fzf#vim#files('~/projects/', <bang>0)
@@ -218,3 +222,13 @@ let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-i': 'split',
   \ 'ctrl-v': 'vsplit' }
+
+" Add format option 'w' to add trailing white space, indicating that paragraph
+" continues on next line. This is to be used with mutt's 'text_flowed' option.
+" (For mutt)
+" not yet working
+"augroup mail_trailing_whitespace " {
+    "autocmd!
+    "autocmd FileType mail setlocal formatoptions+=w
+"augroup END " }
+

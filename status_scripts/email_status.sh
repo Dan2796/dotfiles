@@ -25,7 +25,7 @@ else
 fi
 
 if [[ -f "/home/dan/dotfiles/status_scripts/timetrace_status.txt" ]]; then
-  OUTPUT="$LHS_ARROW The emails can wait"
+  OUTPUT="$LHS_ARROW Do the things external which fall upon thee distract thee?"
 else 
   OUTPUT="$LHS_ARROW $email_sync$email_numbers   $long_ago_message"
 fi

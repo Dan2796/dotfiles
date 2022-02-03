@@ -8,8 +8,9 @@ endif
 set spellfile=~/.vim/spell/en.utf-8.add
 
 " Shortcut for buffer switching
-nmap <Tab> :bn<CR>
-nmap <S-Tab> :bp<CR>
+nmap <Tab> :b#<CR>
+nmap <S-Tab> :bn<CR>
+let g:netrw_altfile = 1
 
 " Trying to make it use true colours
 if (has("termguicolors"))
@@ -21,7 +22,13 @@ filetype on
 
 " Remap
 inoremap jk <Esc>
-nmap <Space>c  : w <enter> : !xelatex % <enter>
+autocmd Filetype tex, nmap <Space>c  : w <enter> : !xelatex % <enter>
+autocmd Filetype markdown, nmap <Space>c  : w <enter> : !pandoc --pdf-engine=xelatex % -o %:r.pdf <enter>
+autocmd Filetype python, nmap <Space>c : !python3 %<CR>
+
+": w <enter> : !xelatex % <enter>
+
+"nnoremap <F5> <Esc>:w<CR>:!python3 %<CR>
 
 " Relative line jump global for counts
 nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
@@ -66,9 +73,6 @@ set foldmethod=syntax
 
 " Map localleader to comma
 let maplocalleader = ','
-
-" Shortcut for running python
-nnoremap <F5> <Esc>:w<CR>:!python3 %<CR>
 
 " Advanced
 set ruler " Show info. at bottom
@@ -151,7 +155,7 @@ let g:tex_flavor = 'latex'
 let g:vimtex_fold_enabled = 1
 
 " Run R in tmux
- let R_external_term = 1
+" let R_external_term = 1
 " Turn of the underscore change in R
 let R_assign = 0
 " Rely on own syntax highlighting in R
@@ -214,7 +218,7 @@ command! -bang ProjectFiles call fzf#vim#files('~/projects/eu_identities/', <ban
 "command! -bang ProjectFiles call fzf#vim#files('~/projects/losing_support_paper/', <bang>0)
 "command! -bang ProjectFiles call fzf#vim#files('~/projects/brexit_campaign/', <bang>0)
 "command! -bang ProjectFiles call fzf#vim#files('~/projects/polling_ge19/', <bang>0)
-command! -bang AllFiles call fzf#vim#files('~/projects/', <bang>0)
+command! -bang AF call fzf#vim#files('~/projects/', <bang>0)
 "nnoremap <C-p> :FZF<CR>
 " Currently a hack - need to find out how to fzf with tmux main folder 
 nnoremap <C-p> :ProjectFiles<CR>

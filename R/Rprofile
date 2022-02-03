@@ -85,3 +85,7 @@ local({
   r["CRAN"] = "https://cran.rstudio.com/"
   options(repos = r)
 })
+
+# for some reason it's overwritten by another package
+filter <- dplyr::filter
+select <- dplyr::select

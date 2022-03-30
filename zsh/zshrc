@@ -36,6 +36,7 @@ export PATH=$HOME/btb:$PATH
 export PATH=$HOME/nota/usa/making_pdf_of_notes/:$PATH
 export PATH=$HOME/nota/usa/new_references/:$PATH
 export PATH=$HOME/nota/usa/other/:$PATH
+export PATH=$HOME/refs/scripts/:$PATH
 
 # Complete on non-case sensitive
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
@@ -68,6 +69,7 @@ alias protego=protego.sh
 alias renameCiteKey=renameCiteKey.sh
 alias manualref=manualref.sh
 alias Cview=CSVviewer.sh
+alias adlib=add_to_library.sh
 
 alias es='email_sync.sh'
 alias send_cal=calendar_mail.sh
@@ -97,6 +99,9 @@ alias ga='git add'
 alias gaa='git add --all'
 alias gc='git commit'
 alias gp='git push'
+
+# task warrior auto-sync for github
+alias taskg='~/.local/bin/task_git.sh'
 
 # for zathura to follow symbolic links to original location
 zathura_sym() {

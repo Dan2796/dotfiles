@@ -72,7 +72,7 @@ utils::assignInNamespace(
 )
 
 # Source my useful functions
-useful_functions_files <- list.files(path = "~/code_betteR/",
+useful_functions_files <- list.files(path = "~/code_betteR/general_functions/",
                                      full.names = TRUE,
                                      recursive = TRUE,
                                      pattern = ".R")

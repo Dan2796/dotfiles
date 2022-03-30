@@ -1,6 +1,8 @@
 #!/bin/sh
 
+WHITE_LHS_ARROW="^b#434c5e^^c#d8dee9^"
 LHS_ARROW="^c#434c5e^^c#d8dee9^^b#434c5e^"
+
 # Sound
 SOUND=$(pactl list sinks | grep 'Volume: f' | grep -o '[0-9]\+%' | head -1)
 
@@ -10,5 +12,11 @@ else
   MUTE=""
 fi
 
-echo "$LHS_ARROW  $SOUND$MUTE"
+if [[ -f "/home/dan/dotfiles/status_scripts/timetrace_status.txt" ]]; then
+  OUTPUT="$LHS_ARROW  $SOUND$MUTE"
+else 
+  OUTPUT="$WHITE_LHS_ARROW  $SOUND$MUTE"
+fi
+
+echo $OUTPUT
 

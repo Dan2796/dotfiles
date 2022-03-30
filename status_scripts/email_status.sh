@@ -1,7 +1,8 @@
 #!/bin/sh
 
 # Arrow is given in the timetrace one so it can change colour
-LHS_ARROW="^b#4c566a^^c#d8dee9^"
+WHITE_LHS_ARROW="^b#4c566a^^c#d8dee9^"
+LHS_ARROW="^c#434c5e^^c#d8dee9^^b#434c5e^"
 #LHS_ARROW="^b#5e81ac^^c#2e3440^"
 
 # Show syncing time
@@ -25,7 +26,7 @@ else
 fi
 
 if [[ -f "/home/dan/dotfiles/status_scripts/timetrace_status.txt" ]]; then
-  OUTPUT="$LHS_ARROW Do the things external which fall upon thee distract thee?"
+  OUTPUT="$WHITE_LHS_ARROW"
 else 
   OUTPUT="$LHS_ARROW $email_sync$email_numbers   $long_ago_message"
 fi

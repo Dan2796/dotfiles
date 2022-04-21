@@ -56,6 +56,7 @@ alias wcancel=watson_cancel.sh
 alias wstop=watson_stop.sh
 alias tstart=timetrace_start.sh
 alias tstop=timetrace_stop.sh
+alias tpause=timetrace_pause_on.sh
 
 # Bib scripts
 alias accio=accio.sh
@@ -72,6 +73,7 @@ alias Cview=CSVviewer.sh
 alias adlib=add_to_library.sh
 
 alias es='email_sync.sh'
+alias esf='email_sync.sh force'
 alias send_cal=calendar_mail.sh
 
 # For ls etc.

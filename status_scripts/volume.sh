@@ -9,13 +9,16 @@ SOUND=$(pactl list sinks | grep 'Volume: f' | grep -o '[0-9]\+%' | head -1)
 if pactl list sinks | grep -q 'Mute: yes' ; then
   MUTE=" ()"
 else
-  MUTE=""
+  MUTE=" 🎶"
 fi
 
 if [[ -f "/home/dan/dotfiles/status_scripts/timetrace_status.txt" ]]; then
-  OUTPUT="$LHS_ARROW  $SOUND$MUTE"
+  OUTPUT="$LHS_ARROW $SOUND$MUTE"
+elif [[ -f "/home/dan/dotfiles/status_scripts/hide_email.txt" ]]; then
+  OUTPUT="$LHS_ARROW $SOUND$MUTE" # if colouring chill
+  #OUTPUT="$WHITE_LHS_ARROW $SOUND$MUTE"
 else 
-  OUTPUT="$WHITE_LHS_ARROW  $SOUND$MUTE"
+  OUTPUT="$WHITE_LHS_ARROW $SOUND$MUTE"
 fi
 
 echo $OUTPUT

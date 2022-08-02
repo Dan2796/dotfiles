@@ -51,12 +51,10 @@ alias vim=nvim
 alias mutt=neomutt
 
 # Watson commands
-alias wstart=watson_start.sh
-alias wcancel=watson_cancel.sh
-alias wstop=watson_stop.sh
 alias tstart=timetrace_start.sh
 alias tstop=timetrace_stop.sh
 alias tpause=timetrace_pause_on.sh
+alias chill=chillin.sh
 
 # Bib scripts
 alias accio=accio.sh

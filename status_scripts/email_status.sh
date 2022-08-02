@@ -27,6 +27,8 @@ fi
 
 if [[ -f "/home/dan/dotfiles/status_scripts/timetrace_status.txt" ]]; then
   OUTPUT="$WHITE_LHS_ARROW"
+elif [[ -f "/home/dan/dotfiles/status_scripts/hide_email.txt" ]]; then
+  OUTPUT=""
 else 
   OUTPUT="$LHS_ARROW $email_sync$email_numbers   $long_ago_message"
 fi

@@ -213,11 +213,12 @@ autocmd Filetype r set complete=k~/functions_for_R/besip_names.txt
 autocmd Filetype bib, set nofoldenable 
 
 " Fuzzy finder settings
-command! -bang ProjectFiles call fzf#vim#files('~/projects/eu_identities/', <bang>0)
+"command! -bang ProjectFiles call fzf#vim#files('~/projects/eu_identities/', <bang>0)
 "command! -bang ProjectFiles call fzf#vim#files('~/projects/covid_handling_experiment/', <bang>0)
 "command! -bang ProjectFiles call fzf#vim#files('~/projects/full_lost_support/', <bang>0)
 "command! -bang ProjectFiles call fzf#vim#files('~/projects/brexit_campaign/', <bang>0)
 "command! -bang ProjectFiles call fzf#vim#files('~/projects/polling_ge19/', <bang>0)
+command! -bang ProjectFiles call fzf#vim#files('~/projects/china_pcv/', <bang>0)
 command! -bang AF call fzf#vim#files('~/projects/', <bang>0)
 "nnoremap <C-p> :FZF<CR>
 " Currently a hack - need to find out how to fzf with tmux main folder 

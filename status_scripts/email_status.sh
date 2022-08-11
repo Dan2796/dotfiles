@@ -2,8 +2,6 @@
 
 source /home/dan/dotfiles/status_scripts/nord_colour_scheme.sh
 
-# Arrow is given in the timetrace one so it can change colour
-#lhs_white_arrow="^b"$polar_4"^^c"$snow_1"^"
 lhs_arrow="^c"$polar_3"^^c"$snow_1"^^b"$polar_3"^"
 
 # Show syncing time
@@ -26,10 +24,7 @@ else
   long_ago_message="$last_checked_ago mins"
 fi
 
-if [[ -f "/home/dan/dotfiles/status_scripts/status_files/timetrace_status.txt" ]]; then
-  #output="$lhs_white_arrow"
-  output=""
-elif [[ -f "/home/dan/dotfiles/status_scripts/status_files/workin.txt" ]]; then
+if [[ -f "/home/dan/dotfiles/status_scripts/status_files/workin.txt" ]]; then
   output=""
 elif [[ -f "/home/dan/dotfiles/status_scripts/status_files/chillin.txt" ]]; then
   output=""

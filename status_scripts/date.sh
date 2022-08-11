@@ -1,8 +1,11 @@
 #!/bin/sh
-LHS_ARROW="^b#2e3440^^c#e5e9f0^"
+
+source /home/dan/dotfiles/status_scripts/nord_colour_scheme.sh
+
+lhs_arrow="^b"$polar_1"^^c"$snow_2"^"
 
 # europe time. manual adjust because it's easier
-#DATE=$(date -d "+ 1 hour" +"%a, %d %b, %H:%M")
-DATE=$(date +"%a, %d %b, %H:%M")
+#formatted_date=$(date -d "+ 1 hour" +"%a, %d %b, %H:%M")
+formatted_date=$(date +"%a, %d %b, %H:%M")
 
-echo "$LHS_ARROW   $DATE "
+echo "$lhs_arrow   $formatted_date "

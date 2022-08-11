@@ -1,25 +1,24 @@
 #!/bin/sh
 
-WHITE_LHS_ARROW="^b#434c5e^^c#d8dee9^"
-LHS_ARROW="^c#434c5e^^c#d8dee9^^b#434c5e^"
+source /home/dan/dotfiles/status_scripts/nord_colour_scheme.sh
 
-# Sound
-SOUND=$(pactl list sinks | grep 'Volume: f' | grep -o '[0-9]\+%' | head -1)
+white_lhs_arrow="^b"$polar_3"^^c"$snow_1"^"
+lhs_arrow="^c"$polar_3"^^c"$snow_1"^^b"$polar_3"^"
+
+sound=$(pactl list sinks | grep 'Volume: f' | grep -o '[0-9]\+%' | head -1)
 
 if pactl list sinks | grep -q 'Mute: yes' ; then
-  MUTE=" ()"
+  mute=" ()"
 else
-  MUTE=" 🎶"
+  mute=" 🎶"
 fi
 
-if [[ -f "/home/dan/dotfiles/status_scripts/timetrace_status.txt" ]]; then
-  OUTPUT="$LHS_ARROW $SOUND$MUTE"
-elif [[ -f "/home/dan/dotfiles/status_scripts/hide_email.txt" ]]; then
-  OUTPUT="$LHS_ARROW $SOUND$MUTE" # if colouring chill
-  #OUTPUT="$WHITE_LHS_ARROW $SOUND$MUTE"
+if [[ -f "/home/dan/dotfiles/status_scripts/status_files/chillin.txt" ]]; then
+  output="$lhs_arrow $sound$mute"
+elif [[ -f "/home/dan/dotfiles/status_scripts/status_files/workin.txt" ]]; then
+  output="$lhs_arrow $sound$mute" 
 else 
-  OUTPUT="$WHITE_LHS_ARROW $SOUND$MUTE"
+  output="$white_lhs_arrow $sound$mute"
 fi
 
-echo $OUTPUT
-
+echo $output

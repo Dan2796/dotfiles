@@ -1,7 +1,9 @@
 #!/bin/sh
 
-LHS_ARROW="^b#434c5e^^c#d8dee9^"
+source /home/dan/dotfiles/status_scripts/nord_colour_scheme.sh
 
-WIFI="$(nmcli | grep -o 'connected to .\+' | sed 's/connected to / /g')"
+lhs_arrow="^b"$polar_3"^^c"$snow_1"^"
 
-echo "$LHS_ARROW $WIFI"
+wifi="$(nmcli | grep -o 'connected to .\+' | sed 's/connected to / /g')"
+
+echo "$lhs_arrow $wifi"

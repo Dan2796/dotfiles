@@ -1,52 +1,45 @@
 #!/bin/sh
 
-# LHS defined at bottom 
+source /home/dan/dotfiles/status_scripts/nord_colour_scheme.sh
 
-#BAT_NUM=$(upower -i $(upower -e | grep 'BAT') | grep -E "percentage" | sed 's/[^0-9]*//g')
-BAT_NUM=$(upower -i $(upower -e | grep 'BAT') | grep -E "percentage" | sed 's/[^0-9,.]*//g' | awk '{printf("%.0f\n", $1)}')
+bat_num=$(upower -i $(upower -e | grep 'BAT') | grep -E "percentage" | sed 's/[^0-9,.]*//g' | awk '{printf("%.0f\n", $1)}')
 
-BAT_STATE=$(upower -i $(upower -e | grep 'BAT') | grep -E "state" | 
+bat_state=$(upower -i $(upower -e | grep 'BAT') | grep -E "state" | 
   sed 's/\ //g' | sed 's/state://g')
-BAT_TIME=$(upower -i $(upower -e | grep 'BAT') | grep -E "time\ to" |
+
+bat_time=$(upower -i $(upower -e | grep 'BAT') | grep -E "time\ to" |
   sed 's/\ //g' | sed 's/timetoempty://g' | sed 's/timetofull://g' | sed 's/hours/ hrs/g' | sed 's/minutes/ mins/g' )
 
-if (( $BAT_NUM <= 20 )); then
-  BAT_SYM=""
-elif (( $BAT_NUM <= 40 )); then
-  BAT_SYM=""
-elif (( $BAT_NUM <= 60 )); then
-  BAT_SYM=""
-elif (( $BAT_NUM <= 95 )); then
-  BAT_SYM=" "
-elif (( $BAT_NUM > 95 )); then
-  BAT_SYM=""
+if (( $bat_num <= 20 )); then
+  bat_sym=""
+elif (( $bat_num <= 40 )); then
+  bat_sym=""
+elif (( $bat_num <= 60 )); then
+  bat_sym=""
+elif (( $bat_num <= 95 )); then
+  bat_sym=" "
+elif (( $bat_num > 95 )); then
+  bat_sym=""
 else 
-  BAT_NUM=""
+  bat_num=""
 fi
 
-case $BAT_STATE in
+case $bat_state in
   fully-charged)
-    BAT_TIME_UNTIL="Full"
+    bat_time_until="Full"
     ;;
   charging) 
-    BAT_TIME_UNTIL="$BAT_NUM%  - $BAT_TIME until full"
+    bat_time_until="$bat_num%  - $bat_time until full"
     ;;
   discharging) 
-    BAT_TIME_UNTIL="$BAT_NUM% - $BAT_TIME left"
+    bat_time_until="$bat_num% - $bat_time left"
     ;;
 esac
 
-# note that the lhs arrow is overwritten if battery is low
-#if [ $BAT_NUM <= 20 ] && [ $BAT_STATE != "charging" ]; then
-    #LHS_ARROW="^c#bf616a^^c#2e3440^^b#bf616a^"
-  #else
-    #LHS_ARROW="^c#5e81ac^^c#2e3440^^b#5e81ac^"
-#fi
-
-if (( $BAT_NUM <= 20 )) && [[ $BAT_STATE != "charging" ]];then
-    LHS_ARROW="^c#bf616a^^c#2e3440^^b#bf616a^"
+if (( $bat_num <= 20 )) && [[ $bat_state != "charging" ]];then
+    lhs_arrow="^c"$aurora_1"^^c"$polar_1"^^b"$aurora_1"^"
   else
-    LHS_ARROW="^b#434c5e^^c#e5e9f0^"
+    lhs_arrow="^b"$polar_3"^^c"$snow_2"^"
 fi
   
-echo "$LHS_ARROW $BAT_SYM $BAT_TIME_UNTIL"
+echo "$lhs_arrow $bat_sym $bat_time_until"

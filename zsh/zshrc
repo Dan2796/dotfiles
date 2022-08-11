@@ -55,6 +55,7 @@ alias tstart=timetrace_start.sh
 alias tstop=timetrace_stop.sh
 alias tpause=timetrace_pause_on.sh
 alias chill=chillin.sh
+alias work=workin.sh
 
 # Bib scripts
 alias accio=accio.sh

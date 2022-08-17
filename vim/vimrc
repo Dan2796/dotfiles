@@ -24,7 +24,7 @@ filetype on
 inoremap jk <Esc>
 autocmd Filetype tex, nmap <Space>c  : w <enter> : !xelatex % <enter>
 autocmd Filetype markdown, nmap <Space>c  : w <enter> : !pandoc --pdf-engine=xelatex % -o %:r.pdf <enter>
-autocmd Filetype python, nmap <Space>c : !python3 %<CR>
+autocmd Filetype python, nmap <Space>c : w <enter> : !python3 %<CR>
 
 ": w <enter> : !xelatex % <enter>
 

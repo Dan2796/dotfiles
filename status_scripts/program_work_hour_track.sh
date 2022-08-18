@@ -12,8 +12,8 @@ from_red_lhs_arrow="^b"$aurora_1"^^c"$polar_4"^^c"$snow_1"^^b"$polar_4"^"
 program_time=$(timew summary today programming | tail -n 2 | xargs | awk -F ":" '{print $1 "h" $2 "m"}')
 
 # correct to zero if it throws the no filtered data message
-if [[ $deep_time == *"filtered"* ]]; then
-  deep_time="0h00m"
+if [[ $program_time == *"filtered"* ]]; then
+  program_time="0h00m"
 fi
 
 # need to add condition for if currently shallow working

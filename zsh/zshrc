@@ -41,7 +41,11 @@ export PATH=$HOME/refs/scripts/:$PATH
 # Complete on non-case sensitive
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
+# for using "konsole" in thunderbird
+alias konsole=st
+
 # Aliases for zsh
+alias cat='bat --theme="Nord"'
 
 # Auto zoom feh
 alias feh='feh --scale-down'
@@ -71,8 +75,8 @@ alias manualref=manualref.sh
 alias Cview=CSVviewer.sh
 alias adlib=add_to_library.sh
 
-alias es='email_sync.sh'
-alias esf='email_sync.sh force'
+#alias es='email_sync.sh'
+#alias esf='email_sync.sh force'
 alias send_cal=calendar_mail.sh
 
 # For ls etc.
@@ -140,3 +144,7 @@ else
 fi
 
 
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

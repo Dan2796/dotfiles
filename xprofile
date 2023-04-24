@@ -2,7 +2,7 @@
 
 dwmblocks &
 # start email syncing loop
-/home/dan/btb/email_loop.sh &
+#/home/dan/btb/email_loop.sh &
 
 # Start nxcloud sync
 nextcloud &
@@ -12,7 +12,7 @@ nextcloud &
 #~/dotfiles/wallpaper/minimalist_random.sh &
 feh --bg-fill ~/wallpapers/minimalist/203545.jpg &
 
-picom --experimental-backends &
+picom &
 xfce4-power-manager &
 xset b off 
 

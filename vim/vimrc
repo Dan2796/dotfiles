@@ -80,38 +80,38 @@ set ruler " Show info. at bottom
 set undolevels=1000
 
 call plug#begin('~/.vim/plugged')
-Plug 'scrooloose/nerdtree' " NERDTree
-"Plug 'spolu/dwm.vi' " For dwm windows in vim!
+  " comment out lines in .gitconfig to allow http cloning when updating
 
-Plug 'Yggdroot/indentLine' " For indentation lines
+  Plug 'scrooloose/nerdtree' " NERDTree
+  "Plug 'spolu/dwm.vi' " For dwm windows in vim!
+  Plug 'Yggdroot/indentLine' " For indentation lines
+  Plug 'tpope/vim-surround' " For tagging
+  Plug 'tpope/vim-fugitive' " Git inside vim
+  Plug 'junegunn/goyo.vim' " Goyo
+  Plug 'junegunn/limelight.vim' " Focussed writing - need colour sourt
+  Plug 'vim-airline/vim-airline' " Vim airline for pretty bar thing
+  Plug 'jalvesaq/Nvim-R' " Nvim R
+  Plug 'jalvesaq/vimcmdline' " Nvim-R for Python
+  Plug 'vim-pandoc/vim-pandoc-syntax' " Markdown syntax
+  Plug 'vim-pandoc/vim-rmarkdown' " Other markdown stuff
+  Plug 'morhetz/gruvbox' " Gruv-box theme
+  Plug 'arcticicestudio/nord-vim' " Nord theme
+  Plug 'jnurmine/Zenburn' " Zen theme
+  Plug 'lervag/vimtex' " For tex stuff e.g. autocite hopefully
+  Plug 'maverickg/stan.vim' " For Stan syntax highlighting
+  Plug 'chrisbra/csv.vim' " For CSV viewing
+  "Plug 'vim-latex/vim-latex' " For full vimtex
+  Plug 'mattn/emmet-vim' " Autocomplete in html 
+  Plug 'junegunn/fzf.vim' " Fuzzy finder vim plugin
+  "Plug 'ervandew/supertab' " Tab completion
+  Plug 'gaalcaras/ncm-R' " Completion in R
+  Plug 'ervandew/supertab' " Tab completion
+  Plug 'freitass/todo.txt-vim' " Todo syntax and keybindings
+  Plug 'pangloss/vim-javascript' " Javascript syntax
+  Plug 'mattn/emmet-vim' " Emmet
+  Plug 'w0rp/ale' " Javscript lint
+  Plug 'AndrewRadev/tagalong.vim' " Change other tag
 
-Plug 'tpope/vim-surround' " For tagging
-Plug 'tpope/vim-fugitive' " Git inside vim
-
-Plug 'junegunn/goyo.vim' " Goyo
-Plug 'junegunn/limelight.vim' " Focussed writing - need colour sourt
-
-Plug 'vim-airline/vim-airline' " Vim airline for pretty bar thing
-
-Plug 'jalvesaq/Nvim-R' " Nvim R
-Plug 'jalvesaq/vimcmdline' " Nvim-R for Python
-Plug 'vim-pandoc/vim-pandoc-syntax' " Markdown syntax
-Plug 'vim-pandoc/vim-rmarkdown' " Other markdown stuff
-Plug 'morhetz/gruvbox' " Gruv-box theme
-Plug 'arcticicestudio/nord-vim' " Nord theme
-Plug 'jnurmine/Zenburn' " Zen theme
-Plug 'lervag/vimtex' " For tex stuff e.g. autocite hopefully
-Plug 'maverickg/stan.vim' " For Stan syntax highlighting
-Plug 'chrisbra/csv.vim' " For CSV viewing
-"Plug 'vim-latex/vim-latex' " For full vimtex
-Plug 'mattn/emmet-vim' " Autocomplete in html 
-Plug 'junegunn/fzf' " Fuzzy finder
-Plug 'junegunn/fzf.vim' " Fuzzy finder vim plugin
-"Plug 'ervandew/supertab' " Tab completion
-Plug 'gaalcaras/ncm-R' " Completion in R
-Plug 'ervandew/supertab' " Tab completion
-
-Plug 'freitass/todo.txt-vim' " Todo syntax and keybindings
 call plug#end()
 
 let g:pandoc#modules#disabled = ["keyboard"] " disabling j map from vim-pandoc
@@ -156,6 +156,8 @@ let g:vimtex_fold_enabled = 1
 
 " Run R in tmux
 " let R_external_term = 1
+" Open R on left side, not currently working -.- :
+let R_objbr_place = 'LEFT'
 " Turn of the underscore change in R
 let R_assign = 0
 " Rely on own syntax highlighting in R
@@ -165,6 +167,9 @@ let R_hl_term = 0
 set tags+=rtags
 set tags+=../rtags " for tags stored one level higher
 set tags+=../../rtags " for tags stored two levels higher
+set tags+=.rtags
+set tags+=../.rtags " for tags stored one level higher
+set tags+=../../.rtags " for tags stored two levels higher
 " from https://tinyheero.github.io/2017/05/13/r-vim-ctags.html
 let g:tagbar_type_r = {
     \ 'ctagstype' : 'r',
@@ -196,6 +201,9 @@ autocmd BufRead,BufNewFile ~/tmp/.calcurse/notes* set filetype=markdown
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro' 
+" hide dotfiles
+let ghregex='\(^\|\s\s\)\zs\.\S\+'
+let g:netrw_list_hide=ghregex
 "au BufWinEnter * set number
 nmap #ee :Explore<CR> 
 nmap #ts :Texplore<CR> 
@@ -218,7 +226,9 @@ autocmd Filetype bib, set nofoldenable
 "command! -bang ProjectFiles call fzf#vim#files('~/projects/full_lost_support/', <bang>0)
 "command! -bang ProjectFiles call fzf#vim#files('~/projects/brexit_campaign/', <bang>0)
 "command! -bang ProjectFiles call fzf#vim#files('~/projects/polling_ge19/', <bang>0)
-command! -bang ProjectFiles call fzf#vim#files('~/projects/china_pcv/', <bang>0)
+"command! -bang ProjectFiles call fzf#vim#files('~/projects/china_pcv/', <bang>0)
+"command! -bang ProjectFiles call fzf#vim#files('~/projects/chapter_bes_book/', <bang>0)
+command! -bang ProjectFiles call fzf#vim#files('~/projects/benchmark/', <bang>0)
 command! -bang AF call fzf#vim#files('~/projects/', <bang>0)
 "nnoremap <C-p> :FZF<CR>
 " Currently a hack - need to find out how to fzf with tmux main folder 
@@ -237,3 +247,18 @@ let g:fzf_action = {
     "autocmd FileType mail setlocal formatoptions+=w
 "augroup END " }
 
+" Show ale linter messages in airline
+let g:airline#extensions#ale#enabled = 1
+" Only run linters when file saved
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
+let g:ale_virtualtext_cursor = 'disabled'
+let g:ale_set_highlights = 0
+" Only use linters for javascript:
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\}
+let g:ale_linters_explicit = 1
+
+" Emmet trigger key
+let g:user_emmet_leader_key='<C-L>'

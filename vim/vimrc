@@ -129,10 +129,12 @@ autocmd! User GoyoEnter nested set nu rnu
 " Color scheme set as nord from plugin
 set t_Co=256
 syntax on
-set background=dark
 colorscheme nord
+set bg=dark
 " And make transparent
 :hi Normal guibg=NONE ctermbg=NONE
+"colorscheme gruvbox
+"set bg=light
 
 " Or for sunny days:
 "set background=light

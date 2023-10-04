@@ -30,54 +30,11 @@ bindkey "^[[B" history-beginning-search-forward
 source ~/.config/zsh-vi-mode/zsh-vi-mode.zsh
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 
-# Path variables
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$HOME/btb:$PATH
-export PATH=$HOME/nota/usa/making_pdf_of_notes/:$PATH
-export PATH=$HOME/nota/usa/new_references/:$PATH
-export PATH=$HOME/nota/usa/other/:$PATH
-export PATH=$HOME/refs/scripts/:$PATH
-
 # Complete on non-case sensitive
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
-# for using "konsole" in thunderbird
-alias konsole=st
-
-# Aliases for zsh
-alias cat='bat --theme="Nord"'
-
-# Auto zoom feh
-alias feh='feh --scale-down'
-
 # Principle of least surprises
 alias vim=nvim
-alias mutt=neomutt
-
-# Watson commands
-alias tstart=timetrace_start.sh
-alias tstop=timetrace_stop.sh
-alias tpause=timetrace_pause_on.sh
-alias chill=chillin.sh
-alias work=workin.sh
-
-# Bib scripts
-alias accio=accio.sh
-alias bibtag=bibtag.sh
-alias notestag=notestag.sh
-alias refsort=refsort.sh
-alias revelio=revelio.sh
-alias Bibify=Bibify.sh
-alias findref=findref.sh
-alias protego=protego.sh
-alias renameCiteKey=renameCiteKey.sh
-alias manualref=manualref.sh
-alias Cview=CSVviewer.sh
-alias adlib=add_to_library.sh
-
-#alias es='email_sync.sh'
-#alias esf='email_sync.sh force'
-alias send_cal=calendar_mail.sh
 
 # For ls etc.
 alias ls='ls --color=auto'
@@ -105,45 +62,10 @@ alias gaa='git add --all'
 alias gc='git commit'
 alias gp='git push'
 
-# task warrior auto-sync for github
-alias taskg='~/.local/bin/task_git.sh'
-
 # for zathura to follow symbolic links to original location
 zathura_sym() {
   zathura $(readlink -f $1)
 }
-
-# Fuzzy finder default bindings
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
-export FZF_DEFAULT_COMMAND='find . -name .git -prune -o -name node_modules -prune -o -name coverage -prune -o -name tmp -prune -o -type f -print'
-
-# Trying to get ssh to work automatically, from:
-# https://stackoverflow.com/questions/18880024/start-ssh-agent-on-login
-SSH_ENV="$HOME/.ssh/agent-environment"
-
-function start_agent {
-    echo "Initialising new SSH agent..."
-    /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
-    echo succeeded
-    chmod 600 "${SSH_ENV}"
-    . "${SSH_ENV}" > /dev/null
-    /usr/bin/ssh-add;
-}
-
-# Source SSH settings, if applicable
-
-if [ -f "${SSH_ENV}" ]; then
-    . "${SSH_ENV}" > /dev/null
-    #ps ${SSH_AGENT_PID} doesn't work under cywgin
-    ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
-        start_agent;
-    }
-else
-    start_agent;
-fi
-
-
 
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

@@ -39,7 +39,7 @@ esac
 if (( $bat_num <= 20 )) && [[ $bat_state != "charging" ]];then
     lhs_arrow="^c"$aurora_1"^^c"$polar_1"^^b"$aurora_1"^"
   else
-    lhs_arrow="^b"$polar_3"^^c"$snow_2"^"
+    lhs_arrow="^c"$polar_2"^^c"$snow_2"^^b"$polar_2"^"
 fi
   
 echo "$lhs_arrow $bat_sym $bat_time_until"
